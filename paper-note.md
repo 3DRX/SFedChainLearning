@@ -20,6 +20,8 @@
     参与特定任务的边缘节点
 - ConsensusMembers
     具有高信誉、高贡献度的边缘节点，负责从所有 TaskCollaborators 上传的模型中整合出最优模型
+- CreditCoin
+    “代币”，用于体现各个成员在系统中的贡献量与参与程度
 
 ### SFedChain scheme
 
@@ -29,9 +31,13 @@
     3. 储存所有参与FL的边缘节点信息
 
 - RetrievalChain
-    1. 
+    1. 储存 Unified Retrieval Graph
 
 
 - ArgChain
     1. TaskCollaborators 在这里上传自己通过本地数据训练的模型参数
+
+-------
+
+#### Unified retrieval graph
 

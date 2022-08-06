@@ -60,7 +60,9 @@ if __name__ == '__main__':
     global entity_vocab
     args.device = torch.device('cuda:{}'.format(args.gpu) if torch.cuda.is_available() and args.gpu != -1 else 'cpu')
     # args.device = torch.device('cuda:{}'.format(args.gpu) if torch.cuda.is_available() and args.gpu != -1 else 'cpu')
+
     # load dataset and split users  -->  dataset_train, dataset_test
+    # 加载数据，并将数据分为 tarin 和 test 两组
     if args.dataset == '20ng':
         dataset = data_fed.utils_data_fed.Dataset(args)
         dataset.load_data(tokenizer, entity_linker, val_ratio=args.val_ratio_global)
@@ -79,7 +81,6 @@ if __name__ == '__main__':
     print(f'dataset.result["train"] 的长度为: {len(dataset.result["train"])}')
     print(f'dataset.result["val"] 的长度为: {len(dataset.result["val"])}')
     print(f'dataset.result["test"] 的长度为: {len(dataset.result["test"])}')
-    # while True: pass
     # sample users
     if args.iid:
         dict_users = mnist_iid(dataset.result['train'], args.num_users)
