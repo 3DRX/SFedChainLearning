@@ -23,9 +23,10 @@ import sys
 sys.path.append('/home/user/Documents/mmm/paper/wikipedia2vec-master/examples/fed_avg/utils_fed')
 import options
 sys.path.append('/home/user/Documents/mmm/paper/wikipedia2vec-master/examples/fed_avg/data_fed')
-from reformat_20news_bydate import *
-from reformat_agnews import *
-from reformat_r8 import *
+from data_fed.reformat_20news_bydate import *
+from data_fed.reformat_agnews import *
+from data_fed.reformat_r8 import *
+# kjy：上面三行加上了 data_fed. ，不加的话无法import
 
 PAD_TOKEN = '<PAD>'
 WHITESPACE_REGEXP = re.compile(r'\s+')

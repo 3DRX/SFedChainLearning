@@ -12,14 +12,21 @@ import sys
 from nltk.corpus import stopwords
 from tqdm import tqdm
 
-sys.path.append('/home/user/Documents/mmm/paper/wikipedia2vec-master/examples/fed_avg/utils_fed')
+sys.path.append('./utils_fed')
+# sys.path.append('/home/user/Documents/mmm/paper/wikipedia2vec-master/examples/fed_avg/utils_fed')
+# kjy：原作者在这里硬编码了路径...
 import options
 
 # filepath = '20news-bydate-train'
-path_fed_avg = '/home/user/Documents/mmm/paper/wikipedia2vec-master/examples/fed_avg'
-path_data = '/home/user/Documents/mmm/paper/wikipedia2vec-master/examples/fed_avg/data_fed'
-path_agnews = '/home/user/Documents/mmm/paper/wikipedia2vec-master/examples/fed_avg/data_fed/agnews'
 
+path_fed_avg = './'
+path_data = './data_fed'
+path_agnews = './data_fed/agnews'
+
+# path_fed_avg = '/home/user/Documents/mmm/paper/wikipedia2vec-master/examples/fed_avg'
+# path_data = '/home/user/Documents/mmm/paper/wikipedia2vec-master/examples/fed_avg/data_fed'
+# path_agnews = '/home/user/Documents/mmm/paper/wikipedia2vec-master/examples/fed_avg/data_fed/agnews'
+# kjy：原作者在这里硬编码了路径...
 
 # filepath = os.path.join(path, '20news-bydate/20news-bydate-train')
 
@@ -157,9 +164,10 @@ class REFORMAT_AGNEWS:
             print(f'os.path.join(path, "agnews.txt"): {len(f.readlines())}')
         with open(os.path.join(path_agnews, 'corpus', 'agnews.txt'), 'r') as f:
             print(f'os.path.join(path, "corpus", "agnews.txt"): {len(f.readlines())}')
-        self.copy_file(os.path.join(path_agnews, 'agnews.txt'), os.path.join(path_fed_avg, 'text_gcn/data/agnews.txt'))
+        self.copy_file(os.path.join(path_agnews, 'agnews.txt'),
+                os.path.join(path_fed_avg, 'text_gcn/data/agnews.txt'))
         self.copy_file(os.path.join(path_agnews, 'corpus', 'agnews.txt'),
-                       os.path.join(path_fed_avg, 'text_gcn/data/corpus/agnews.txt'))
+                os.path.join(path_fed_avg, 'text_gcn/data/corpus/agnews.txt'))
 
         # 测试 'text_gcn/data/agnews.txt'
         print('测试 text_gcn/data/agnews.txt')
