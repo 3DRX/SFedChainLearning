@@ -14,3 +14,14 @@ SFedChain: blockchain-based federated learning scheme for secure data sharing in
 
 - 其他的dependencies貌似不用刻意注意版本，直接pip下载最新版就行
 
+### Progress
+
+- 8-7
+    1. main 40行处的 embedding 和 entity_linker
+       报错（wikipedia2vec找不到一个文件？？？）
+       暂时先注释掉了，去跑后面加载数据的部分
+
+    2. 加载 agnews 时 'text_gcn/data/agnews.txt' 是哪个文件？
+       发现 reformat_agnews.py
+       中原作者将文件路径硬编码了，尝试着改成相对路径，不知改对与否
+
