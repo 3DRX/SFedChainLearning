@@ -8,7 +8,7 @@ from marisa_trie import Trie, RecordTrie
 from tqdm import tqdm
 
 import sys
-sys.path.append('/home/user/Documents/mmm/paper/wikipedia2vec-master/examples/fed_avg')
+sys.path.append('./')
 # from data.utils import normalize_text
 
 logger = logging.getLogger(__name__)

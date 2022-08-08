@@ -20,9 +20,9 @@ from tqdm import tqdm
 from nltk.corpus import stopwords
 import nltk
 import sys
-sys.path.append('/home/user/Documents/mmm/paper/wikipedia2vec-master/examples/fed_avg/utils_fed')
+sys.path.append('./utils_fed')
 import options
-sys.path.append('/home/user/Documents/mmm/paper/wikipedia2vec-master/examples/fed_avg/data_fed')
+sys.path.append('./data_fed')
 from reformat_20news_bydate import *
 
 PAD_TOKEN = '<PAD>'

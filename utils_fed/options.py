@@ -1,7 +1,7 @@
 import argparse
 def args_parser():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset', type=str, default='agnews')  # ['20ng', 'agnews', 'r8']
+    parser.add_argument('--dataset', type=str, default='20ng')  # ['20ng', 'agnews', 'r8']
     # r8
 
     parser.add_argument('--num_nodes', type=int, default=7)

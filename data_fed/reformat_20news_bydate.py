@@ -11,13 +11,13 @@ import sys
 from nltk.corpus import stopwords
 from tqdm import tqdm
 
-sys.path.append('/home/user/Documents/mmm/paper/wikipedia2vec-master/examples/fed_avg/utils_fed')
+sys.path.append('./utils_fed')
 import options
 
 # filepath = '20news-bydate-train'
-path_fed_avg = '/home/user/Documents/mmm/paper/wikipedia2vec-master/examples/fed_avg'
-path_data = '/home/user/Documents/mmm/paper/wikipedia2vec-master/examples/fed_avg/data_fed'
-path_20ng = '/home/user/Documents/mmm/paper/wikipedia2vec-master/examples/fed_avg/data_fed/20ng'
+path_fed_avg = './'
+path_data = './data_fed'
+path_20ng = './data_fed/20ng'
 # filepath = os.path.join(path, '20news-bydate/20news-bydate-train')
 
 # 所有文件的路径集合，每行三列，example:

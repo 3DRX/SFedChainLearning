@@ -150,8 +150,8 @@ class REFORMAT_AGNEWS:
             for line in partition_tt_content_list:
                 self.textgcn_path_list.append(line[0] + '\n')
                 self.textgcn_content_list.append(line[1] + '\n')
-        print(len(self.textgcn_path_list))
-        print(len(self.textgcn_content_list))
+        print('len(self.textgcn_path_list): ',len(self.textgcn_path_list))
+        print('len(self.textgcn_content_list): ',len(self.textgcn_content_list))
 
         with open(os.path.join(path_agnews, 'agnews.txt'), 'w') as f:
             for line in self.textgcn_path_list:
@@ -168,6 +168,7 @@ class REFORMAT_AGNEWS:
                 os.path.join(path_fed_avg, 'text_gcn/data/agnews.txt'))
         self.copy_file(os.path.join(path_agnews, 'corpus', 'agnews.txt'),
                 os.path.join(path_fed_avg, 'text_gcn/data/corpus/agnews.txt'))
+        # 这个text_gcn/data/corpus/agnews.txt是啥？
 
         # 测试 'text_gcn/data/agnews.txt'
         print('测试 text_gcn/data/agnews.txt')

@@ -10,7 +10,7 @@ from tqdm import tqdm
 
 import sys
 
-sys.path.append('/home/user/Documents/mmm/paper/wikipedia2vec-master/examples/fed_avg')
+sys.path.append('./')
 from torch.utils.data import DataLoader
 from utils_fed.optimizer import *
 
@@ -71,9 +71,9 @@ class LocalUpdate(object):
         print(f'\t节点 "val" 长度：{len(dataset_local.local_result["val"])}')
         print(f'\t节点 "test" 长度：{len(dataset_local.local_result["test"])}')
         # 将本地训练数据的大小传给 textgcn
-        path_20ng = '/home/user/Documents/mmm/paper/wikipedia2vec-master/examples/fed_avg/data_fed/20ng'
-        path_agnews = '/home/user/Documents/mmm/paper/wikipedia2vec-master/examples/fed_avg/data_fed/agnews'
-        path_r8 = '/home/user/Documents/mmm/paper/wikipedia2vec-master/examples/fed_avg/data_fed/r8'
+        path_20ng = './data_fed/20ng'
+        path_agnews = './data_fed/agnews'
+        path_r8 = './data_fed/r8'
         if self.args.dataset == '20ng':
             with open(os.path.join(path_20ng, 'num_train.txt'), 'w') as f:
                 f.write(str(len(dataset_local.local_result["train"]) + len(dataset_local.local_result["val"])))

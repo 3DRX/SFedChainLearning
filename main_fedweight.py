@@ -7,7 +7,7 @@ import entity_linker
 from torch.utils.data import DataLoader
 
 import sys
-sys.path.append('/home/user/Documents/mmm/paper/wikipedia2vec-master/examples/fed_avg')
+sys.path.append('./')
 import data_fed.utils_data_fed
 import utils_fed.update
 from utils_fed.fedavg import *
