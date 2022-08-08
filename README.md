@@ -35,7 +35,7 @@ SFedChain: blockchain-based federated learning scheme for secure data sharing in
        'entity_linker' has no attribute 'detect_mentions'
 
 报错如下：
-'''
+```
 Traceback (most recent call last):
     File "main_fedweight.py", line 80, in <module>
     dataset.load_data(tokenizer, entity_linker, val_ratio=args.val_ratio_global)
@@ -44,5 +44,5 @@ Traceback (most recent call last):
     File "/Users/kjy/Documents/SFedChainLearning/data_fed/utils_data_fed.py", line 164, in detect_mentions
     return entity_linker.detect_mentions(text)
     AttributeError: module 'entity_linker' has no attribute 'detect_mentions'
-'''
+```
 
