@@ -42,6 +42,7 @@ def args_parser():
     parser.add_argument('--seed', type=int, default=2021)
     parser.add_argument('--wikipedia2vec_file', type=str, default='enwiki_20180420_lg1_300d.pkl')
     parser.add_argument('--entity_linker_file', type=str, default='enwiki_20180420_entity_linker.pkl')
+    # kjy: 上面这两个用default会报错
     parser.add_argument('--dataset_path', type=str, default=None)
     parser.add_argument('--use_word', type=bool, default=True)
 

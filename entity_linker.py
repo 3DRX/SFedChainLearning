@@ -54,6 +54,7 @@ _dump_db = _tokenizer = _max_mention_length = _name_trie = None
 class EntityLinker(object):
     def __init__(self, data_file):
         data = joblib.load(data_file)
+        # 上面这行运行时找不到data_file
         self.title_trie = data['title_trie']
         self.mention_trie = data['mention_trie']
         self.data_trie = data['data_trie']

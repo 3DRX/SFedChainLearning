@@ -38,21 +38,9 @@ if __name__ == '__main__':
     timer = Timer()
 
     args = args_parser()
-    # embedding = wikipedia2vec.Wikipedia2Vec.load(args.wikipedia2vec_file)
-    # 这行会导致 wikipedia2vec 报错
-    tokenizer = wikipedia2vec.utils.tokenizer.regexp_tokenizer.RegexpTokenizer()
-    # entity_linker = entity_linker.EntityLinker(args.entity_linker_file)
-    # 这行会导致 wikipedia2vec 报错
-    # 报错信息如下：
-    """
-Traceback (most recent call last):
-  File "main_fedweight.py", line 41, in <module>
     embedding = wikipedia2vec.Wikipedia2Vec.load(args.wikipedia2vec_file)
-  File "wikipedia2vec/wikipedia2vec.pyx", line 171, in wikipedia2vec.wikipedia2vec.Wikipedia2Vec.load
-  File "/Users/kjy/Documents/SFedChainLearning/venv/lib/python3.8/site-packages/joblib/numpy_pickle.py", line 579, in load
-    with open(filename, 'rb') as f:
-FileNotFoundError: [Errno 2] No such file or directory: 'enwiki_20180420_lg1_300d.pkl'
-    """
+    tokenizer = wikipedia2vec.utils.tokenizer.regexp_tokenizer.RegexpTokenizer()
+    entity_linker = entity_linker.EntityLinker(args.entity_linker_file)
 
     print('---------------- 打印实验信息： ------------------')
     print(f'数据集：{args.dataset}')

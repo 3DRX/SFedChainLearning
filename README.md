@@ -46,3 +46,11 @@ Traceback (most recent call last):
     AttributeError: module 'entity_linker' has no attribute 'detect_mentions'
 ```
 
+- 8-9
+    1. 8-7 问题3的原因是因为 8-7 问题1注释掉了entity_linker的赋值（I am stupid）
+
+    2. --wikipedia2vec_file 和 --entity_linker_file 的参数默认值  
+       （分别是 enwiki_20180420_lg1_300d.pkl 和 enwiki_20180420_entity_linker.pkl），  
+       这两个文件是从哪来的？
+
+
