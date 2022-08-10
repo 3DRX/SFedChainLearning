@@ -15,22 +15,9 @@ def args_parser():
     parser.add_argument('--val_ratio_global', type=float, default=0.025)
     parser.add_argument('--val_ratio_local', type=float, default=0.04)
 
-
-
-
-
-
-
-
-
-
-
     # federated arguments
 
     parser.add_argument('--model', type=str, default='NABoE', help='model name')
-
-
-
 
     # 节点数共9个，将20ng的数据划分为9份，
     # 划分为两份的情况下，两个用户参加。。。
@@ -40,9 +27,8 @@ def args_parser():
     # num_nodes固定不变，然后调num_users，从两个--三个--四个
     parser.add_argument('--verbose', type=bool, default=True)
     parser.add_argument('--seed', type=int, default=2021)
-    parser.add_argument('--wikipedia2vec_file', type=str, default='enwiki_20180420_lg1_300d.pkl')
-    parser.add_argument('--entity_linker_file', type=str, default='enwiki_20180420_entity_linker.pkl')
-    # kjy: 上面这两个用default会报错
+    parser.add_argument('--wikipedia2vec_file', type=str, default='enwiki/enwiki_20180420_lg1_300d.pkl')
+    parser.add_argument('--entity_linker_file', type=str, default='enwiki/enwiki_20180420_entity_linker.pkl')
     parser.add_argument('--dataset_path', type=str, default=None)
     parser.add_argument('--use_word', type=bool, default=True)
 

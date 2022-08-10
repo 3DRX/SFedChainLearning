@@ -7,12 +7,22 @@ SFedChain: blockchain-based federated learning scheme for secure data sharing in
 
 ### Environment
 
-- python@3.8.13, 原作者用的3.8.10，但目前（8月7日）看来没啥问题。尝试过更高的版本比如 3.10 甚至 3.9 都不行（无法下载wikipedia2vec）
+- python@3.8.13, 原作者用的3.8.10，但目前（8月10日）看来没啥问题。尝试过更高的版本比如 3.10 甚至 3.9 都不行（无法下载wikipedia2vec）
 
-- wikipedia2vec==0.1.13，这个用最新版1.几的会报错，虽然原作者没有注明，但是根据python版本推测原作者用的也是0.几
-    但是0.1.13虽然import不报错，运行时仍然表现不正常
+- 所有代码中用到的库下载最新版的就行
 
-- 其他的dependencies貌似不用刻意注意版本，直接pip下载最新版就行
+- **Download Wikipedia2Vec embeddings:**
+
+```bash
+% wget https://wikipedia2vec.s3-ap-northeast-1.amazonaws.com/misc/text_classification/enwiki_20180420_lg1_300d.pkl.bz2
+% bunzip2 enwiki_20180420_lg1_300d.pkl.bz2
+```
+- **Download entity detector model:**
+
+```bash
+% wget https://wikipedia2vec.s3-ap-northeast-1.amazonaws.com/misc/text_classification/enwiki_20180420_entity_linker.pkl.bz2
+% bunzip2 enwiki_20180420_entity_linker.pkl.bz2
+```
 
 ### Progress
 
@@ -52,5 +62,9 @@ Traceback (most recent call last):
     2. --wikipedia2vec_file 和 --entity_linker_file 的参数默认值  
        （分别是 enwiki_20180420_lg1_300d.pkl 和 enwiki_20180420_entity_linker.pkl），  
        这两个文件是从哪来的？
+
+- 8-10
+    1. 8-9 问题2 中提到的文件来源:  
+    https://github.com/wikipedia2vec/wikipedia2vec/tree/master/examples/text_classification
 
 

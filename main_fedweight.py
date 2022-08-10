@@ -33,13 +33,14 @@ class Timer:
     def stop(self):
         """Stop the timer and record the time in a list."""
         self.times.append(time.time() - self.tik)
+        # kjy: 这个方法编辑器报错了，但是查了下好似从来没有调用过这个方法
 
 if __name__ == '__main__':
     timer = Timer()
 
     args = args_parser()
-    embedding = wikipedia2vec.Wikipedia2Vec.load(args.wikipedia2vec_file)
     tokenizer = wikipedia2vec.utils.tokenizer.regexp_tokenizer.RegexpTokenizer()
+    embedding = wikipedia2vec.Wikipedia2Vec.load(args.wikipedia2vec_file)
     entity_linker = entity_linker.EntityLinker(args.entity_linker_file)
 
     print('---------------- 打印实验信息： ------------------')
@@ -59,7 +60,6 @@ if __name__ == '__main__':
     global word_vocab
     global entity_vocab
     args.device = torch.device('cuda:{}'.format(args.gpu) if torch.cuda.is_available() and args.gpu != -1 else 'cpu')
-    # args.device = torch.device('cuda:{}'.format(args.gpu) if torch.cuda.is_available() and args.gpu != -1 else 'cpu')
 
     # load dataset and split users  -->  dataset_train, dataset_test
     # 加载数据，并将数据分为 tarin 和 test 两组
