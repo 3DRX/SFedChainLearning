@@ -67,4 +67,26 @@ Traceback (most recent call last):
     1. 8-9 问题2 中提到的文件来源:  
     https://github.com/wikipedia2vec/wikipedia2vec/tree/master/examples/text_classification
 
+- 8-11
+    1. r8 数据集30次 Global Aggregation 训练结果:  
+
+```
+---------------- 打印实验信息： ------------------
+8
+节点数：7
+用户数：7
+max_nums：6
+num_max_nums：6
+模型：NABoE
+val_ratio_global：0.025
+val_ratio_local：0.04
+batch_size：8
+GPU：0
+全局模R型建模准确率（Evaluate global Test Accuracy）: 0.9730
+本地模型建模准确率均值（Evaluata local Test Accuracy）: 0.9173138419369575
+运行结束时间： Y-08-11-19_07_30
+本地模型建模时间均值为（毫秒级时间）：113.98029954092843ms
+联合模型建模时间（毫秒级时间）：3320816ms
+len(timer.times):210
+```
 
