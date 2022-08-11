@@ -195,6 +195,7 @@ class Dataset(object):
         random.shuffle(train_data)
 
         print('---------------- fetch_20newsgroups 加载完成： ------------------')
+        # 这里有、不对，无论是那个数据集输出都是20ng
 
         print(f'train_data 的长度为: {len(train_data) - val_size}')
         print(f'test_data 的长度为: {len(test_data)}')
@@ -210,6 +211,7 @@ class Dataset(object):
         word_counter = Counter()
         entity_counter = Counter()
         for instance in tqdm(self.data):
+            # 进度条
             word_counter.update(t.text for t in tokenize(instance.text))
             entity_counter.update(m.title for m in detect_mentions(instance.text))
         print(f'len(self.data_fed): {len(self.data)}')

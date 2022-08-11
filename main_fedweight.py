@@ -36,9 +36,12 @@ class Timer:
         # kjy: 这个方法编辑器报错了，但是查了下好似从来没有调用过这个方法
 
 if __name__ == '__main__':
+    # 初始化计时器
     timer = Timer()
 
+    # 载入配置选项，如：数据集文件路径、数据集类型、GPU ID 等等
     args = args_parser()
+    # 加载数据集文件（./enwiki 下的两个文件）
     tokenizer = wikipedia2vec.utils.tokenizer.regexp_tokenizer.RegexpTokenizer()
     embedding = wikipedia2vec.Wikipedia2Vec.load(args.wikipedia2vec_file)
     entity_linker = entity_linker.EntityLinker(args.entity_linker_file)
@@ -62,7 +65,7 @@ if __name__ == '__main__':
     args.device = torch.device('cuda:{}'.format(args.gpu) if torch.cuda.is_available() and args.gpu != -1 else 'cpu')
 
     # load dataset and split users  -->  dataset_train, dataset_test
-    # 加载数据，并将数据分为 tarin 和 test 两组
+    # 加载数据，并将数据分为 tarin、val、test 三组
     if args.dataset == '20ng':
         dataset = data_fed.utils_data_fed.Dataset(args)
         dataset.load_data(tokenizer, entity_linker, val_ratio=args.val_ratio_global)
@@ -122,14 +125,14 @@ if __name__ == '__main__':
         exit('Error: unrecognized model')
     global_model = models.naboe.NABoE(word_embedding, entity_embedding, len(dataset.data.label_names), args.dropout_prob, args.use_word)
 
+    print('global model: ', end = '')
     print(global_model)
-    print('model_global打印成功！')
     global_model.to(args.device)
     global_model.train()
 
     # copy weights  -->  w_glob
     w_global = global_model.state_dict()
-    print('\w_global输出成功！')
+    print('global输出成功！\n')
 
     # training
     loss_train = []
@@ -138,13 +141,14 @@ if __name__ == '__main__':
 
     if args.all_clients:
         m = args.num_users
-        print(f"Aggregation over clients: {m}, all vlients")
+        print(f"Aggregation over \033{m}\033 clients, all vlients")
         w_locals = [w_global for i in range(args.num_users)]
     else:
         print("错误")
         # m = max(int(args.frac * args.num_users), 1)
         # pri-==cnt(f"Aggregation over clients: {m}")
         # w_locals = []
+    # 随机生成节点排序
     idx_users = np.random.choice(range(args.num_users), m, replace=False)
     print(idx_users)
 
@@ -155,7 +159,7 @@ if __name__ == '__main__':
     num_epochs_without_improvement_global = 0
     time_list = []
     acc_local_num_users = []  # 每次迭代，各本地模型的准确率组成的列表
-    # while True:
+    # 开始Global Aggregation，设定次数
     for i in range(30):
         epoch_global += 1
         # if epoch_global > 30:
