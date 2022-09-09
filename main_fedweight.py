@@ -33,7 +33,6 @@ class Timer:
     def stop(self):
         """Stop the timer and record the time in a list."""
         self.times.append(time.time() - self.tik)
-        # kjy: 这个方法编辑器报错了，但是查了下好似从来没有调用过这个方法
 
 if __name__ == '__main__':
     # 初始化计时器
@@ -238,10 +237,10 @@ if __name__ == '__main__':
 
     test_acc_global = utils_fed.update.evaluate(global_model, test_iterator_global, args.device, 'test')[0]
     print(f'全局模R型建模准确率（Evaluate global Test Accuracy）: {test_acc_global:.4f}')
-    print(f'本地模型建模准确率均值（Evaluata local Test Accuracy）: {sum(acc_local_num_users[:args.num_users]) / args.num_users}')
+    print(f'本地模型建模准确率均值（Evaluate local Test Accuracy）: {sum(acc_local_num_users[:args.num_users]) / args.num_users}')
     print(f'运行结束时间：{time.strftime("% Y-%m-%d-%H_%M_%S", time.localtime())}')
     print(f'本地模型建模时间均值为（毫秒级时间）：{sum(timer.times[:args.num_users]) / args.num_users}ms')
-    print(f'联合模型建模时间（毫秒级时间）：{int(round(sum(time_list) * 1000))}ms')  # f'联合模型建模时间（秒级时间）：{int(sum(time_list))}s')  # 秒级时间戳
+    print(f'联合模型建模时间（毫秒级时间）：{int(round(sum(time_list) * 1000))}ms')
     print(f'len(timer.times):{len(timer.times)}')
     # print(acc_local_num_users[:args.num_users])
 
