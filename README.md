@@ -83,7 +83,7 @@ val_ratio_local：0.04
 batch_size：8
 GPU：0
 全局模R型建模准确率（Evaluate global Test Accuracy）: 0.9730
-本地模型建模准确率均值（Evaluata local Test Accuracy）: 0.9173138419369575
+本地模型建模准确率均值（Evaluate local Test Accuracy）: 0.9173138419369575
 运行结束时间： Y-08-11-19_07_30
 本地模型建模时间均值为（毫秒级时间）：113.98029954092843ms
 联合模型建模时间（毫秒级时间）：3320816ms
