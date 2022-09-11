@@ -194,8 +194,7 @@ class Dataset(object):
         val_size = int(len(train_data) * val_ratio)
         random.shuffle(train_data)
 
-        print('---------------- fetch_20newsgroups 加载完成： ------------------')
-        # 这里有、不对，无论是那个数据集输出都是20ng
+        print('---------------- 数据集 加载完成： ------------------')
 
         print(f'train_data 的长度为: {len(train_data) - val_size}')
         print(f'test_data 的长度为: {len(test_data)}')
