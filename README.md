@@ -1,4 +1,6 @@
-# SFedChain ❌ SFedArray ✔️
+# SFedChain Learning
+
+> forked from https://github.com/mengmingming-sudo/SFedChain
 
 #### Introduction
 SFedChain: blockchain-based federated learning scheme for secure data sharing in distributed energy storage networks
